@@ -27,14 +27,6 @@ body {
     background-color: #f0f0f0;
 }
 
-.content {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    scrollbar-color: #d0d0d0 #f0f0f0;
-    scrollbar-width: thin;
-}
-
 .image-container {
     width: 30%;
     overflow: hidden;
@@ -45,12 +37,21 @@ body {
     height: auto;
 }
 
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    scrollbar-color: #d0d0d0 #f0f0f0;
+    scrollbar-width: thin;
+}
+
 .content::-webkit-scrollbar {
     width: 8px;
 }
 
 .content::-webkit-scrollbar-thumb {
     background-color: #d0d0d0;
+    border-radius: 8px;
 }
 
 .content::-webkit-scrollbar-track {
