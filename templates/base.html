@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"/>
     <title>
         {% block title %}
-
+            MY RESUME
         {% endblock %}
     </title>
     {% block css_files %}
@@ -14,27 +14,37 @@
     {% endblock %}
 </head>
 <body>
+<div>
+    <div>
+        <nav>
+            <ul>
+                <li>
+                    <i class="far fa-file-alt" style="font-size: 32px; color: rgb(183, 170, 29)"></i>
+                    <a href="#"></a>
+                </li>
 
-{% block content %}
-    <nav>
-        <ul>
-            <li>
-                <i class="far fa-file-alt" style="font-size: 32px; color: rgb(183, 170, 29)"></i>
-                <a href="#"></a>
-            </li>
+                <li>
+                    <i class="far fa-file-alt" style="font-size: 32px; color: rgb(183, 170, 29)"></i>
+                    <a href="#"></a>
+                </li>
 
-            <li>
-                <i class="far fa-file-alt" style="font-size: 32px; color: rgb(183, 170, 29)"></i>
-                <a href="#"></a>
-            </li>
+                <li>
+                    <i class="far fa-file-alt" style="font-size: 32px; color: rgb(183, 170, 29)"></i>
+                    <a href="#"></a>
+                </li>
 
-            <li>
-                <i class="far fa-file-alt" style="font-size: 32px; color: rgb(183, 170, 29)"></i>
-                <a href="#"></a>
-            </li>
+            </ul>
+        </nav>
+    </div>
 
-        </ul>
-    </nav>
-{% endblock %}
+    <div>
+        <img src="" alt="My Image"/>
+    </div>
+<div>
+    {% block content %}
+
+    {% endblock %}
+</div>
+</div>
 </body>
 </html>
