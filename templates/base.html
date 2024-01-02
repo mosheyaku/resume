@@ -1,19 +1,22 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"/>
     <title>
         {% block title %}
             MY RESUME
         {% endblock %}
     </title>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"/>
+    <link rel="stylesheet" href="{% static "apps.css/" %}">
 </head>
+
 <body>
-<div>
-    <div>
+<div class="page-view">
+    <div class="navigation-bar">
         <nav>
             <ul>
                 <li>
@@ -35,14 +38,14 @@
         </nav>
     </div>
 
-    <div>
+    <div class="image-container">
         <img src="" alt="My Image"/>
     </div>
-<div>
-    {% block content %}
+    <div class="content">
+        {% block content %}
 
-    {% endblock %}
-</div>
+        {% endblock %}
+    </div>
 </div>
 </body>
 </html>
