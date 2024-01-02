@@ -42,7 +42,7 @@ body {
   padding: 20px;
   overflow-y: auto;
   scrollbar-color: #d0d0d0 #f0f0f0;
-  scrollbar-width: auto;
+  scrollbar-width: thin;
 }
 
 .content::-webkit-scrollbar {
@@ -61,4 +61,14 @@ body {
 .icon {
   font-size: 32px;
   color: rgb(183, 170, 29);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
 }
