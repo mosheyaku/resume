@@ -1,66 +1,64 @@
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
 }
 
 .page-view {
-    display: flex;
-    width: 80%;
-    max-width: 800px;
-    height: 80vh;
-    overflow: hidden;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: relative;
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+  height: 80vh;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .navigation-bar {
-    width: 20%;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: #f0f0f0;
+  width: 5%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
 }
 
 .image-container {
-    width: 30%;
-    overflow: hidden;
+  width: 25%;
+  overflow: hidden;
 }
 
 .image-container img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .content {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    scrollbar-color: #d0d0d0 #f0f0f0;
-    scrollbar-width: thin;
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  scrollbar-color: #d0d0d0 #f0f0f0;
+  scrollbar-width: auto;
 }
 
 .content::-webkit-scrollbar {
-    width: 8px;
+  width: 6px;
 }
 
 .content::-webkit-scrollbar-thumb {
-    background-color: #d0d0d0;
-    border-radius: 8px;
+  background-color: #d0d0d0;
+  border-radius: 8px;
 }
 
 .content::-webkit-scrollbar-track {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 .icon {
   font-size: 32px;
   color: rgb(183, 170, 29);
 }
-
-
