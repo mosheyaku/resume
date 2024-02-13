@@ -122,7 +122,7 @@ body {
     background: linear-gradient(to left, rgb(243, 241, 224) 95%, rgb(234, 230, 230));
 }
 
-.material-symbols-outlined {
+.navigation-bar .material-symbols-outlined {
     font-size: 36px !important;
     color: #c5c1c1 !important;
     justify-content: center !important;
@@ -130,7 +130,7 @@ body {
     transition: color 0.2s !important;
 }
 
-.material-symbols-outlined:hover {
+.navigation-bar .material-symbols-outlined:hover {
     color: #8282cb !important;
 }
 
