@@ -1,22 +1,26 @@
 {% extends "base.html" %}
+{% load static %}
 
+
+{% block css_files %}
+	    <link rel="stylesheet" href="{% static "resume/index.css" %}">
+{% endblock %}
 {% block content %}
     <h1>About Me</h1>
     <p>
-        I am a computer science student characterized by a friendly and collaborative nature, complemented by strong<br>
-        leadership qualities. Meticulous attention to detail is ingrained in my approach, ensuring precision in
-        every<br>
-        task. With a positive demeanor, I contribute to a harmonious team atmosphere.<br><br>
+        I am a computer science student characterized by a friendly and collaborative nature, complemented by strong
+        leadership qualities.<br> Meticulous attention to detail is ingrained in my approach, ensuring precision in
+        every task.<br>
+        With a positive demeanor, I contribute to a harmonious team atmosphere.<br><br>
 
         I am driven by an innate eagerness to expand my knowledge, constantly seeking opportunities for learning.<br>
-        My ability to quickly and effectively grasp new concepts reflects my adaptability and readiness to navigate<br>
-        evolving challenges. As a computer science enthusiast, I am committed to personal and academic growth,
-        bringing<br>
-        a dynamic and innovative perspective to collaborative environments.<br>
+        My ability to quickly and effectively grasp new concepts reflects my adaptability and readiness to navigate
+        evolving challenges.<br> As a computer science enthusiast, I am committed to personal and academic growth,
+        bringing a dynamic and innovative perspective to collaborative environments.<br>
     </p>
 
     <h1>Languages</h1>
-    <ul>
+    <ul class="languages">
         <li>
             Hebrew-Native
         </li>
