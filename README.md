@@ -1,7 +1,7 @@
-# Blog Site
+# Resume Website
 
 ### Introduction
-_Developed a personal portfolio website using the Django framework in 
+_Developed a personal resume website using the Django framework in 
 Python, incorporating Python, CSS, HTML, and JavaScript.</br>
 The website focuses on presenting my resume in a visually appealing anduser-friendly 
 design, featuring interactive elements to </br>enhance the overall browsing experience._
