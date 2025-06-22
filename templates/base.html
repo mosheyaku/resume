@@ -27,6 +27,8 @@
 </header>
 
 <main class="main-content">
+
+  <!-- Hero section -->
   <section id="hero" class="section hero-section">
     <div class="hero-content">
       <div class="hero-photo-wrapper">
@@ -41,42 +43,26 @@
     </div>
   </section>
 
+  <!-- About section -->
   <section id="about" class="section content-section">
-    {% block about %}
-    <h2>About Me</h2>
-    <p>Hi! I'm Moshe, a backend developer focused on building clean, scalable, and maintainable applications using Django and related technologies.</p>
-    {% endblock %}
+    {% block about %}{% endblock %}
   </section>
 
+  <!-- Skills section -->
   <section id="skills" class="section content-section">
-    {% block skills %}
-    <h2>Skills</h2>
-    <ul class="skills-list">
-      <li>Python / Django</li>
-      <li>REST API Design</li>
-      <li>PostgreSQL & Databases</li>
-      <li>Docker & Kubernetes</li>
-      <li>Git & CI/CD</li>
-    </ul>
-    {% endblock %}
+    {% block skills %}{% endblock %}
   </section>
 
+  <!-- Projects section -->
   <section id="projects" class="section content-section">
-    {% block projects %}
-    <h2>Projects</h2>
-    <ul class="projects-list">
-      <li><strong>Socialight:</strong> A modern event publishing platform using Django & React.</li>
-      <li><strong>Portfolio Site:</strong> Designed and coded a clean, responsive personal portfolio.</li>
-    </ul>
-    {% endblock %}
+    {% block projects %}{% endblock %}
   </section>
 
+  <!-- Contact section -->
   <section id="contact" class="section content-section">
-    {% block contact %}
-    <h2>Contact Me</h2>
-    <p>Feel free to reach out via email at <a href="mailto:moshe@example.com">moshe@example.com</a></p>
-    {% endblock %}
+    {% block contact %}{% endblock %}
   </section>
+
 </main>
 
 <script src="{% static 'script.js' %}"></script>

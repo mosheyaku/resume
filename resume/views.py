@@ -8,21 +8,8 @@ from django.views.generic import ListView
 
 # Create your views here.
 
-def start_page(request):
+def index(request):
     return render(request, "resume/index.html")
-
-
-def my_skills(request):
-    return render(request, "resume/my-skills.html")
-
-
-def my_projects(request):
-    return render(request, "resume/my-projects.html")
-
-
-def contact_me(request):
-    return render(request, "resume/contact-me.html")
-
 
 def download_resume(request, file_path):
     file_path = os.path.join(settings.MEDIA_ROOT, file_path)
