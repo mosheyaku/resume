@@ -22,7 +22,7 @@
 
 
 <h2>Contact</h2>
-<p><strong>Email:</strong> {{ contact.email }}</p>
+<p><strong>Email:</strong> <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
 {% if contact.phone %}
   <p><strong>Phone:</strong> {{ contact.phone }}</p>
 {% endif %}
