@@ -1,25 +1,41 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var navLinks = document.querySelectorAll(".navigation-bar a:not(.no-slide)");
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('.section');
 
-    navLinks.forEach(function (link) {
-        link.addEventListener("click", function (event) {
-                event.preventDefault();
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      const currentSection = document.querySelector('.section.in-view');
 
-                if (!link.classList.contains('download')) {
-                    var content = document.querySelector(".content");
+      if (currentSection && currentSection !== targetSection) {
+        currentSection.classList.add('slide-out');
 
-                    content.classList.add("content-slide-out");
-
-                    setTimeout(function () {
-                        window.location.href = link.getAttribute("href");
-
-                        setTimeout(function () {
-                            content.classList.remove("content-slide-out");
-                        }, 500);
-                    }, 500);
-                }
-            }
-        )
-        ;
+        setTimeout(() => {
+          window.scrollTo({ top: targetSection.offsetTop - 60, behavior: 'smooth' });
+          currentSection.classList.remove('slide-out');
+        }, 400);
+      } else {
+        window.scrollTo({ top: targetSection.offsetTop - 60, behavior: 'smooth' });
+      }
     });
+  });
+
+  function onScroll() {
+    const scrollPos = window.scrollY + window.innerHeight / 3;
+    sections.forEach((section, i) => {
+      if (scrollPos >= section.offsetTop - 100) {
+        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+        const id = section.getAttribute('id');
+        document.querySelector(`.nav-link[href="#${id}"]`)?.classList.add('active');
+        section.classList.add('in-view');
+      } else {
+        section.classList.remove('in-view');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', onScroll);
+  onScroll();
 });
