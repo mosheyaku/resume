@@ -67,7 +67,7 @@ body {
 
 /* Main content */
 .main-content {
-  padding-top: 80px;
+  padding-top: 80px;  /* same as your navbar height */
   max-width: 900px;
   margin: 0 auto;
   padding-left: 20px;
@@ -238,6 +238,7 @@ a:hover {
 
 /* Slide-out effect */
 .section.slide-out {
+  animation: slideOut 0.3s ease forwards; /* reduced from 0.4s */
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
