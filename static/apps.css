@@ -37,6 +37,7 @@ body {
   gap: 30px;
   padding: 15px 0;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .nav-list li {
@@ -67,16 +68,17 @@ body {
 
 /* Main content */
 .main-content {
-  padding-top: 80px;
+  padding-top: 80px;  /* same as your navbar height */
   max-width: 900px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
 }
 
-/* Sections */
 .section {
-  margin: 60px 0;
+  min-height: 60vh;
+  scroll-margin-top: 100px;
+  margin: 100px 0;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
@@ -119,7 +121,7 @@ body {
   position: relative;
 }
 
-/* Updated: thin neon spinning ring */
+/* Neon spinning ring */
 .hero-photo-wrapper {
   position: relative;
   width: 190px;
@@ -145,7 +147,7 @@ body {
   z-index: 1;
 }
 
-/* Hero photo itself */
+/* Hero photo */
 .hero-photo {
   width: 190px;
   height: 190px;
@@ -236,7 +238,10 @@ a:hover {
 
 /* Slide-out effect */
 .section.slide-out {
-  animation: slideOut 0.4s ease forwards;
+  animation: slideOut 0.3s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 @keyframes slideOut {
@@ -260,33 +265,74 @@ a:hover {
   }
 }
 
-/* Responsive */
+/* Extra guarantee for short blocks */
+#contact,
+#about {
+  min-height: 60vh;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .hero-name {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .hero-photo,
   .hero-photo-wrapper {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
   }
 
   .hero-photo-wrapper::before {
-    width: 152px;
-    height: 152px;
+    width: 132px;
+    height: 132px;
     top: -6px;
     left: -6px;
   }
 
+  .hero-subtitle {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .hero-socials {
+    gap: 20px;
+    font-size: 1.4rem;
+  }
+
   .nav-list {
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .nav-link,
+  .resume-link {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+
+  .main-content {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .section h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    border-left-width: 6px;
+  }
+
+  .section {
+    margin: 80px 0;
+  }
+
+  .skills-list li,
+  .projects-list li {
+    font-size: 1rem;
+  }
+
+  .hero-section {
+    height: auto;
+    padding-top: 120px;
+    padding-bottom: 40px;
   }
 }
-
