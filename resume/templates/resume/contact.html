@@ -1,23 +1,48 @@
-    <h1>Contact Me</h1>
-    <p>
-        <b>Contact Details:</b>
-    </p>
-    <ul class="contact-icons">
-        <li>
-            <span class="material-symbols-outlined">call</span>
-            +972532793819
-        </li>
+<!--    <h1>Contact Me</h1>-->
+<!--    <p>-->
+<!--        <b>Contact Details:</b>-->
+<!--    </p>-->
+<!--    <ul class="contact-icons">-->
+<!--        <li>-->
+<!--            <span class="material-symbols-outlined">call</span>-->
+<!--            +972532793819-->
+<!--        </li>-->
 
-        <li>
-            <span class="material-symbols-outlined">mail</span>
-            mosheyaku@gmail.com
-        </li>
+<!--        <li>-->
+<!--            <span class="material-symbols-outlined">mail</span>-->
+<!--            mosheyaku@gmail.com-->
+<!--        </li>-->
 
-        <li>
-            <span class="material-symbols-outlined">location_on</span>
-            110 Eliyahu Saadon Street, Or Yehuda
-            Israel
-        </li>
-    </ul>
+<!--        <li>-->
+<!--            <span class="material-symbols-outlined">location_on</span>-->
+<!--            110 Eliyahu Saadon Street, Or Yehuda-->
+<!--            Israel-->
+<!--        </li>-->
+<!--    </ul>-->
 
 
+<h2>Contact</h2>
+<p><strong>Email:</strong> {{ contact.email }}</p>
+{% if contact.phone %}
+  <p><strong>Phone:</strong> {{ contact.phone }}</p>
+{% endif %}
+{% if contact.address %}
+  <p><strong>Address:</strong> {{ contact.address }}</p>
+{% endif %}
+
+<p><strong>Find me on:</strong>
+  {% if contact.github %}
+    <a href="{{ contact.github }}" target="_blank" aria-label="GitHub" style="margin-right: 8px;">
+      <i class="fab fa-github fa-lg"></i>
+    </a>
+  {% endif %}
+  {% if contact.linkedin %}
+    <a href="{{ contact.linkedin }}" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin fa-lg"></i>
+    </a>
+  {% endif %}
+</p>
+
+{% if contact.other_message %}
+  <p>{{ contact.other_message|linebreaks }}</p>
+{% endif %}
