@@ -74,9 +74,10 @@ body {
   padding-right: 20px;
 }
 
-/* Sections */
 .section {
-  margin: 60px 0;
+  min-height: 60vh;
+  scroll-margin-top: 100px;
+  margin: 100px 0;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
@@ -86,6 +87,7 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 .section h2 {
   font-size: 2.8rem;
@@ -236,7 +238,9 @@ a:hover {
 
 /* Slide-out effect */
 .section.slide-out {
-  animation: slideOut 0.4s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 @keyframes slideOut {
@@ -288,5 +292,8 @@ a:hover {
   .section h2 {
     font-size: 2rem;
   }
+}
+#contact {
+  min-height: 60vh;
 }
 
