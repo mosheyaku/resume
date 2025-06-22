@@ -1,7 +1,7 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {% load static %}
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{% block title %}Moshe Yakubov - Portfolio{% endblock %}</title>
@@ -15,6 +15,9 @@
 
 <header class="header-nav">
   <nav>
+    <button class="hamburger" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
     <ul class="nav-list">
       <li><a href="#hero" class="nav-link active">Home</a></li>
       <li><a href="#about" class="nav-link">About</a></li>

@@ -31,13 +31,32 @@ body {
   z-index: 9999;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hamburger {
+  display: none;
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #334155;
+  z-index: 10001;
+}
+
 .nav-list {
   display: flex;
   justify-content: center;
   gap: 30px;
   padding: 15px 0;
   list-style: none;
-  flex-wrap: wrap;
 }
 
 .nav-list li {
@@ -68,7 +87,7 @@ body {
 
 /* Main content */
 .main-content {
-  padding-top: 80px;  /* same as your navbar height */
+  padding-top: 80px;
   max-width: 900px;
   margin: 0 auto;
   padding-left: 20px;
@@ -121,7 +140,6 @@ body {
   position: relative;
 }
 
-/* Neon spinning ring */
 .hero-photo-wrapper {
   position: relative;
   width: 190px;
@@ -147,7 +165,6 @@ body {
   z-index: 1;
 }
 
-/* Hero photo */
 .hero-photo {
   width: 190px;
   height: 190px;
@@ -255,7 +272,6 @@ a:hover {
   }
 }
 
-/* Spin keyframes */
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -265,74 +281,55 @@ a:hover {
   }
 }
 
-/* Extra guarantee for short blocks */
-#contact,
-#about {
-  min-height: 60vh;
-}
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
+  nav {
+    justify-content: flex-start;
+    padding-left: 10px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 15px 0;
+    gap: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+
   .hero-name {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .hero-photo,
   .hero-photo-wrapper {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
   }
 
   .hero-photo-wrapper::before {
-    width: 132px;
-    height: 132px;
-    top: -6px;
-    left: -6px;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-    padding: 0 10px;
-  }
-
-  .hero-socials {
-    gap: 20px;
-    font-size: 1.4rem;
-  }
-
-  .nav-list {
-    gap: 10px;
-    padding: 10px;
-  }
-
-  .nav-link,
-  .resume-link {
-    font-size: 0.9rem;
-    padding: 6px 10px;
-  }
-
-  .main-content {
-    padding-left: 10px;
-    padding-right: 10px;
+    width: 152px;
+    height: 152px;
   }
 
   .section h2 {
-    font-size: 1.6rem;
-    border-left-width: 6px;
+    font-size: 2rem;
   }
 
-  .section {
-    margin: 80px 0;
-  }
-
-  .skills-list li,
-  .projects-list li {
-    font-size: 1rem;
-  }
-
-  .hero-section {
-    height: auto;
-    padding-top: 120px;
-    padding-bottom: 40px;
+  .main-content {
+    padding-top: 100px;
   }
 }

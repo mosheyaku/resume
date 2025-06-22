@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('.section');
   const headerNav = document.querySelector('.header-nav');
+  const hamburger = document.querySelector('.hamburger');
+  const navList = document.querySelector('.nav-list');
 
   function getNavHeight() {
     return headerNav ? headerNav.offsetHeight : 60;
@@ -17,17 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!targetSection) return;
 
+      // Close mobile nav if open
+      if (navList.classList.contains('show')) {
+        navList.classList.remove('show');
+      }
+
       if (currentSection && currentSection !== targetSection) {
-        // Start slide out
         currentSection.classList.add('slide-out');
 
-        // Scroll immediately, no delay
         window.scrollTo({
           top: targetSection.offsetTop - getNavHeight() - 10,
           behavior: 'smooth'
         });
 
-        // Remove slide-out class shortly after animation starts
         setTimeout(() => {
           currentSection.classList.remove('slide-out');
         }, 300);
@@ -63,4 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', onScroll);
   onScroll();
+
+  // Hamburger toggle
+  if (hamburger && navList) {
+    hamburger.addEventListener('click', () => {
+      navList.classList.toggle('show');
+    });
+  }
 });
