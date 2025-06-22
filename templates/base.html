@@ -1,101 +1,85 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>
-        {% block title %}
-            MY RESUME
-        {% endblock %}
-    </title>
-    <link rel="stylesheet" href="{% static "apps.css/" %}">
-    {% block css_files %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Moshe Yakubov - Portfolio{% endblock %}</title>
 
-    {% endblock %}
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'apps.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  {% block css_files %}{% endblock %}
 </head>
-
 <body>
-<div class="page-view">
 
-    <div>
-        <div class="div1"></div>
+<header class="header-nav">
+  <nav>
+    <ul class="nav-list">
+      <li><a href="#hero" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li><a href="{% url 'download_resume' file_path='My Resume.pdf' %}" class="resume-link" download>Resume <i class="fa fa-download"></i></a></li>
+    </ul>
+  </nav>
+</header>
 
-        <div class="navigation-bar">
-            <nav>
-                <ul>
-                    <li>
-                        <a href="{% url "start_page" %}">
-                            <span class="material-symbols-outlined">person</span>
-                        </a>
-                        About
-                    </li>
-
-                    <li>
-                        <a href="{% url "my_skills" %}">
-                            <span class="material-symbols-outlined">checklist</span>
-                        </a>
-                        Skills
-                    </li>
-
-                    <li>
-                        <a href="{% url "my_projects" %}">
-                            <span class="material-symbols-outlined">work</span>
-                        </a>
-                        Projects
-                    </li>
-
-                    <li>
-                        <a href="{% url "contact_me" %}">
-                            <span class="material-symbols-outlined">perm_phone_msg</span>
-                        </a>
-                        Contact
-                    </li>
-
-                    <li>
-                        <a href="{% url 'download_resume' file_path='My Resume.pdf' %}" class="no-slide">
-                            <span class="material-symbols-outlined">download</span>
-                        </a>
-                        Resume
-                    </li>
-                </ul>
-            </nav>
-        </div>
-
-        <div class="div2"></div>
-
+<main class="main-content">
+  <section id="hero" class="section hero-section">
+    <div class="hero-content">
+      <div class="hero-photo-wrapper">
+        <img src="{% static 'images/my-picture.jpg' %}" alt="Moshe Yakubov" class="hero-photo" />
+      </div>
+      <h1 class="hero-name">Moshe Yakubov</h1>
+      <p class="hero-subtitle">Backend Developer | Django Expert | Passionate Coder</p>
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/moshe-yakubov-376721190/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/mosheyaku" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      </div>
     </div>
+  </section>
 
-    <div class="image-container">
-        <div class="caption">Moshe Yakubov
-            <a href="https://www.linkedin.com/in/moshe-yakubov-376721190/">
-                <i class="fa fa-linkedin icon"></i>
-            </a>
-            <a href="https://github.com/mosheyaku">
-                <i class="fa fa-github icon"></i>
-            </a>
-        </div>
-        <img src="{% static "/images/my-picture.jpg" %}" alt="My Image"/>
-    </div>
+  <section id="about" class="section content-section">
+    {% block about %}
+    <h2>About Me</h2>
+    <p>Hi! I'm Moshe, a backend developer focused on building clean, scalable, and maintainable applications using Django and related technologies.</p>
+    {% endblock %}
+  </section>
 
-    <div>
-        <div class="div3"></div>
+  <section id="skills" class="section content-section">
+    {% block skills %}
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Python / Django</li>
+      <li>REST API Design</li>
+      <li>PostgreSQL & Databases</li>
+      <li>Docker & Kubernetes</li>
+      <li>Git & CI/CD</li>
+    </ul>
+    {% endblock %}
+  </section>
 
-        <div class="content">
-            {% block content %}
+  <section id="projects" class="section content-section">
+    {% block projects %}
+    <h2>Projects</h2>
+    <ul class="projects-list">
+      <li><strong>Socialight:</strong> A modern event publishing platform using Django & React.</li>
+      <li><strong>Portfolio Site:</strong> Designed and coded a clean, responsive personal portfolio.</li>
+    </ul>
+    {% endblock %}
+  </section>
 
-            {% endblock %}
-        </div>
+  <section id="contact" class="section content-section">
+    {% block contact %}
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out via email at <a href="mailto:moshe@example.com">moshe@example.com</a></p>
+    {% endblock %}
+  </section>
+</main>
 
-        <div class="div4"></div>
+<script src="{% static 'script.js' %}"></script>
 
-    </div>
-</div>
-<script src="{% static "script.js" %}"></script>
 </body>
 </html>
