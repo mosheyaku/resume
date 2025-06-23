@@ -458,15 +458,21 @@
 
 
 <h2>Skills</h2>
-{% for category in skill_categories %}
-<h3>{{ category.name }}</h3>
-<ul class="skills-list">
-    {% for skill in category.skills.all %}
-    <li>{{ skill.name }}</li>
-    {% empty %}
-    <li>No skills in this category.</li>
-    {% endfor %}
-</ul>
-{% empty %}
-<p>No categories available.</p>
-{% endfor %}
+<div class="skills-section">
+  {% for category in skill_categories %}
+    <div class="skill-row">
+      <span class="skill-category">{{ category.name }}:</span>
+      <ul class="skills-list logos-list">
+        {% for skill in category.skills.all %}
+          <li>
+            {% if skill.image_url %}
+              <img src="{{ skill.image_url }}" alt="{{ skill.name }}" title="{{ skill.name }}" />
+            {% else %}
+              {{ skill.name }}
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+</div>

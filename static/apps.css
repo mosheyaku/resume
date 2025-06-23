@@ -212,20 +212,6 @@ nav {
   color: var(--neon-hover);
 }
 
-/* Skills and projects lists */
-.skills-list,
-.projects-list {
-  list-style-type: disc;
-  padding-left: 20px;
-  font-size: 1.15rem;
-  color: #334155;
-}
-
-.skills-list li,
-.projects-list li {
-  margin-bottom: 12px;
-}
-
 /* Links */
 a {
   color: var(--neon-navy);
