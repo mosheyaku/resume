@@ -458,21 +458,22 @@
 
 
 <h2>Skills</h2>
-<div class="skills-section">
+<div class="skills-cloud">
   {% for category in skill_categories %}
-    <div class="skill-row">
-      <span class="skill-category">{{ category.name }}:</span>
-      <ul class="skills-list logos-list">
-        {% for skill in category.skills.all %}
-          <li>
-            {% if skill.image_url %}
-              <img src="{{ skill.image_url }}" alt="{{ skill.name }}" title="{{ skill.name }}" />
-            {% else %}
-              {{ skill.name }}
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
+  <div class="skill-category-block">
+    <div class="category-label">{{ category.name }}</div>
+    <div class="cubes-grid">
+      {% for skill in category.skills.all %}
+      <div class="skill-icon" tabindex="0" aria-label="{{ skill.name }}">
+        {% if skill.image_url %}
+          <img src="{{ skill.image_url }}" alt="{{ skill.name }}" />
+        {% else %}
+          <span class="skill-text">{{ skill.name }}</span>
+        {% endif %}
+        <span class="tooltip">{{ skill.name }}</span>
+      </div>
+      {% endfor %}
     </div>
+  </div>
   {% endfor %}
 </div>
