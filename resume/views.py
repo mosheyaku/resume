@@ -5,15 +5,16 @@ from django.shortcuts import render
 from django.conf import settings
 from django.views.generic import ListView
 
-from resume.models import About, Skill, Project, ContactInfo
+from resume.models import About, Skill, Project, ContactInfo, SkillCategory
 
 
 # Create your views here.
 
 def index(request):
+    categories = SkillCategory.objects.prefetch_related('skills').all()
     context = {
         "about": About.objects.first(),
-        "skills": Skill.objects.all(),
+        "skill_categories": categories,
         "projects": Project.objects.all(),
         "contact": ContactInfo.objects.first()
     }

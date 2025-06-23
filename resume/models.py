@@ -10,9 +10,22 @@ class About(models.Model):
     def __str__(self):
         return self.title
 
+class SkillCategory(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 class Skill(models.Model):
     name = models.CharField(max_length=100)
+    category = models.ForeignKey(
+        SkillCategory,
+        on_delete=models.CASCADE,
+        related_name='skills',
+        null=True,
+        blank=True,
+        default=None
+    )
 
     def __str__(self):
         return self.name
