@@ -44,7 +44,7 @@ class Project(models.Model):
 class ContactInfo(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=50, blank=True)
-    address = models.CharField(max_length=255, blank=True)
+    location = models.CharField(max_length=255, blank=True)
     github = models.URLField(blank=True)
     linkedin = models.URLField(blank=True)
     def __str__(self):
