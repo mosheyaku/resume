@@ -458,8 +458,15 @@
 
 
 <h2>Skills</h2>
+{% for category in skill_categories %}
+<h3>{{ category.name }}</h3>
 <ul class="skills-list">
-    {% for skill in skills %}
+    {% for skill in category.skills.all %}
     <li>{{ skill.name }}</li>
+    {% empty %}
+    <li>No skills in this category.</li>
     {% endfor %}
 </ul>
+{% empty %}
+<p>No categories available.</p>
+{% endfor %}
