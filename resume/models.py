@@ -18,6 +18,7 @@ class SkillCategory(models.Model):
 
 class Skill(models.Model):
     name = models.CharField(max_length=100)
+    image_url = models.URLField(blank=True, null=True)
     category = models.ForeignKey(
         SkillCategory,
         on_delete=models.CASCADE,
@@ -26,7 +27,6 @@ class Skill(models.Model):
         blank=True,
         default=None
     )
-
     def __str__(self):
         return self.name
 
