@@ -20,29 +20,53 @@
 <!--        </li>-->
 <!--    </ul>-->
 
+<h2 class="contact-header">Get in Touch</h2>
 
-<h2>Contact</h2>
-<p><strong>Email:</strong> <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
-{% if contact.phone %}
-  <p><strong>Phone:</strong> {{ contact.phone }}</p>
-{% endif %}
-{% if contact.address %}
-  <p><strong>Address:</strong> {{ contact.address }}</p>
-{% endif %}
+<div class="timeline-container">
+  <div class="timeline-line"></div>
 
-<p><strong>Find me on:</strong>
-  {% if contact.github %}
-    <a href="{{ contact.github }}" target="_blank" aria-label="GitHub" style="margin-right: 8px;">
-      <i class="fab fa-github fa-lg"></i>
-    </a>
+  <div class="timeline-item">
+    <div class="item-bar"></div>
+    <div class="item-content">
+      <strong>Email:</strong> <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+    </div>
+  </div>
+
+  {% if contact.phone %}
+  <div class="timeline-item">
+    <div class="item-bar"></div>
+    <div class="item-content">
+      <strong>Phone:</strong> {{ contact.phone }}
+    </div>
+  </div>
   {% endif %}
-  {% if contact.linkedin %}
-    <a href="{{ contact.linkedin }}" target="_blank" aria-label="LinkedIn">
-      <i class="fab fa-linkedin fa-lg"></i>
-    </a>
-  {% endif %}
-</p>
 
-{% if contact.other_message %}
-  <p>{{ contact.other_message|linebreaks }}</p>
-{% endif %}
+  {% if contact.address %}
+  <div class="timeline-item">
+    <div class="item-bar"></div>
+    <div class="item-content">
+      <strong>Address:</strong> {{ contact.address }}
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="timeline-item social">
+    <div class="item-bar"></div>
+    <div class="item-content socials">
+      {% if contact.github %}
+        <a href="{{ contact.github }}" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      {% endif %}
+      {% if contact.linkedin %}
+        <a href="{{ contact.linkedin }}" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if contact.other_message %}
+  <blockquote class="timeline-item message-block">{{ contact.other_message|linebreaks }}</blockquote>
+  {% endif %}
+</div>
