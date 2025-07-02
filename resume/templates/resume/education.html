@@ -1,7 +1,7 @@
 <h2>Education</h2>
 <div class="education-section">
-  {% for edu in education_list %}
-    <div class="edu-item">
+  {% for edu in education %}
+    <div class="education-card">
       <h3>{{ edu.degree }}</h3>
       <p class="institution">{{ edu.institution }} ({{ edu.start_year }}{% if edu.end_year %} - {{ edu.end_year }}{% endif %})</p>
       {% if edu.gpa %}
@@ -10,8 +10,14 @@
       {% if edu.description %}
         <p>{{ edu.description }}</p>
       {% endif %}
-      {% if edu.main_courses %}
-        <p><strong>Main Courses:</strong> {{ edu.main_courses }}</p>
+
+      {% if edu.course_list %}
+      <div class="courses-container">
+        <h4>Main Courses:</h4>
+        {% for course in edu.course_list %}
+          <div class="course-highlight">{{ course }}</div>
+        {% endfor %}
+      </div>
       {% endif %}
     </div>
   {% empty %}

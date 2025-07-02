@@ -12,9 +12,14 @@ from resume.models import About, Skill, Project, ContactInfo, SkillCategory, Edu
 
 def index(request):
     categories = SkillCategory.objects.prefetch_related('skills').all()
+    education = Education.objects.all().order_by('-start_year')
+    for edu in education:
+        # Split main_courses string by lines and store as a list attribute
+        edu.course_list = [line.strip() for line in edu.main_courses.splitlines() if line.strip()]
+
     context = {
         "about": About.objects.first(),
-        "education_list": Education.objects.all(),
+        "education": education,
         "skill_categories": categories,
         "projects": Project.objects.all(),
         "contact": ContactInfo.objects.first()

@@ -14,7 +14,7 @@ class Education(models.Model):
     institution = models.CharField(max_length=200)
     degree = models.CharField(max_length=200)
     description = models.TextField(blank=True)
-    main_courses = models.TextField(blank=True, help_text="Comma-separated list")
+    main_courses = models.TextField(blank=True, help_text="Enter courses separated by new lines")
     gpa = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
     start_year = models.PositiveIntegerField()
     end_year = models.PositiveIntegerField(blank=True, null=True)
