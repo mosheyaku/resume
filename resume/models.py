@@ -10,6 +10,19 @@ class About(models.Model):
     def __str__(self):
         return self.title
 
+class Education(models.Model):
+    institution = models.CharField(max_length=200)
+    degree = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    main_courses = models.TextField(blank=True, help_text="Comma-separated list")
+    gpa = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
+    start_year = models.PositiveIntegerField()
+    end_year = models.PositiveIntegerField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.degree} at {self.institution}"
+
+
 class SkillCategory(models.Model):
     name = models.CharField(max_length=100)
 
