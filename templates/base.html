@@ -2,70 +2,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{% block title %}Moshe Yakubov - Portfolio{% endblock %}</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>{% block title %}Moshe Yakubov - Portfolio{% endblock %}</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="{% static 'apps.css' %}" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-  {% block css_files %}{% endblock %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'apps.css' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    {% block css_files %}{% endblock %}
 </head>
 <body>
 
 <header class="header-nav">
-  <nav>
-    <button class="hamburger" aria-label="Toggle navigation">
-      <i class="fas fa-bars"></i>
-    </button>
-    <ul class="nav-list">
-      <li><a href="#hero" class="nav-link active">Home</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-      <li><a href="{% url 'download_resume' file_path='My Resume.pdf' %}" class="resume-link" download>Resume <i class="fa fa-download"></i></a></li>
-    </ul>
-  </nav>
+    <nav>
+        <button class="hamburger" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-list">
+            <li><a href="#hero" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="{% url 'download_resume' file_path='My Resume.pdf' %}" class="resume-link" download>Resume <i
+                    class="fa fa-download"></i></a></li>
+        </ul>
+    </nav>
 </header>
 
 <main class="main-content">
 
-  <!-- Hero section -->
-  <section id="hero" class="section hero-section">
-    <div class="hero-content">
-      <div class="hero-photo-wrapper">
-        <img src="{% static 'images/my-picture.jpg' %}" alt="Moshe Yakubov" class="hero-photo" />
-      </div>
-      <h1 class="hero-name">Moshe Yakubov</h1>
-      <p class="hero-subtitle">Backend Developer | Django & Node.JS Expert | Passionate Coder</p>
-      <div class="hero-socials">
-        <a href="https://www.linkedin.com/in/moshe-yakubov-376721190/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/mosheyaku" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      </div>
-    </div>
-  </section>
+    <!-- Hero section -->
+    <section id="hero" class="section hero-section">
+        <div class="hero-content">
+            <div class="hero-photo-wrapper">
+                <img src="{% static 'images/my-picture.jpg' %}" alt="Moshe Yakubov" class="hero-photo"/>
+            </div>
+            <h1 class="hero-name">Moshe Yakubov</h1>
+            <p class="hero-subtitle">Backend Developer | Django & Node.JS Expert | Passionate Coder</p>
+            <div class="hero-socials">
+                <a href="https://www.linkedin.com/in/moshe-yakubov-376721190/" target="_blank" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/mosheyaku" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
 
-  <!-- About section -->
-  <section id="about" class="section content-section">
-    {% block about %}{% endblock %}
-  </section>
+    <!-- About section -->
+    <section id="about" class="section content-section">
+        {% block about %}{% endblock %}
+    </section>
 
-  <!-- Skills section -->
-  <section id="skills" class="section content-section">
-    {% block skills %}{% endblock %}
-  </section>
+    <!-- Education section -->
+    <section id="education" class="section content-section">
+        {% block education %}{% endblock %}
+    </section>
 
-  <!-- Projects section -->
-  <section id="projects" class="section content-section">
-    {% block projects %}{% endblock %}
-  </section>
 
-  <!-- Contact section -->
-  <section id="contact" class="section content-section">
-    {% block contact %}{% endblock %}
-  </section>
+    <!-- Skills section -->
+    <section id="skills" class="section content-section">
+        {% block skills %}{% endblock %}
+    </section>
+
+    <!-- Projects section -->
+    <section id="projects" class="section content-section">
+        {% block projects %}{% endblock %}
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="section content-section">
+        {% block contact %}{% endblock %}
+    </section>
 
 </main>
 

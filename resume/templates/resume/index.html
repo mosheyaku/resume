@@ -3,6 +3,7 @@
 
 {% block css_files %}
   <link rel="stylesheet" href="{% static 'resume/about.css' %}">
+<link rel="stylesheet" href="{% static 'resume/education.css' %}">
   <link rel="stylesheet" href="{% static 'resume/skills.css' %}">
   <link rel="stylesheet" href="{% static 'resume/projects.css' %}">
   <link rel="stylesheet" href="{% static 'resume/contact.css' %}">
@@ -11,6 +12,11 @@
 {% block about %}
   {% include "resume/about.html" %}
 {% endblock %}
+
+{% block education %}
+  {% include "resume/education.html" %}
+{% endblock %}
+
 
 {% block skills %}
     {% include "resume/skills.html" %}

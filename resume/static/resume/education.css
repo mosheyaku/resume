@@ -1,0 +1,22 @@
+.education-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.edu-item h3 {
+  font-size: 1.5rem;
+  color: var(--neon-navy);
+  margin-bottom: 6px;
+}
+
+.edu-item .institution {
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.edu-item p {
+  margin: 3px 0;
+  color: #475569;
+}
