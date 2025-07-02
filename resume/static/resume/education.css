@@ -1,57 +1,145 @@
+.edu-section-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--neon-navy);
+  text-align: left;           /* changed from center to left */
+  margin-bottom: 60px;
+  margin-left: 0;             /* reset any left margin */
+  text-shadow: 0 0 10px rgba(30, 144, 255, 0.15);
+}
+
 .education-section {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 50px;
 }
 
-.education-card {
-  background: #f8fbff;
-  border: 1px solid #d0e4f3;
-  border-radius: 10px;
-  padding: 20px 25px;
-  margin-bottom: 20px;
-  box-shadow: 0 3px 12px rgba(30, 144, 255, 0.05);
+/* ✨ Elegant glass card */
+.edu-card {
+  padding: 30px 35px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  box-shadow: 0 14px 38px rgba(30, 144, 255, 0.08);
   transition: transform 0.3s ease;
 }
 
-.education-card:hover {
-  transform: scale(1.015);
+.edu-card:hover {
+  transform: translateY(-4px);
 }
 
-.education-card h3 {
-  font-size: 1.5rem;
-  color: var(--neon-navy);
-  margin-bottom: 6px;
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.institution {
+.edu-header h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edu-years {
+  font-size: 0.95rem;
   font-weight: 600;
-  color: #334155;
-  margin-bottom: 6px;
-}
-
-.education-card p {
-  margin: 3px 0;
   color: #475569;
 }
 
-.courses-container {
-  margin-top: 12px;
-}
-
-.courses-container h4 {
-  font-size: 1.2rem;
-  color: var(--neon-navy);
-  margin-bottom: 10px;
+.edu-institution {
+  font-size: 1.15rem;
   font-weight: 600;
+  margin: 10px 0;
+  color: #334155;
 }
 
-.course-highlight {
-  background-color: #f0f4fa;
-  border-left: 4px solid var(--neon-navy);
-  padding: 6px 12px;
-  margin: 6px 0;
+.edu-gpa {
+  font-size: 1rem;
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+.edu-desc {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.edu-courses {
+  margin-top: 18px;
+}
+
+.courses-title {
+  font-weight: 600;
+  color: var(--neon-navy);
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 🌈 Stylish, interactive course tags */
+.course-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.course-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #e2f1ff, #f9fbff);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.92rem;
   font-weight: 500;
   color: #1e293b;
-  border-radius: 4px;
+  border: 1px solid rgba(30, 144, 255, 0.15);
+  box-shadow: 0 4px 10px rgba(30, 144, 255, 0.1);
+  transition: all 0.25s ease;
+}
+
+.course-tag:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: var(--neon-navy);
+  color: white;
+  box-shadow: 0 0 12px rgba(30, 144, 255, 0.4);
+}
+
+.course-tag i {
+  font-size: 0.75rem;
+  color: var(--neon-navy);
+  transition: color 0.25s ease;
+}
+
+.course-tag:hover i {
+  color: white;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .edu-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .edu-header h3 {
+    font-size: 1.4rem;
+  }
+
+  .edu-section-title {
+    font-size: 2.1rem;
+  }
+
+  .course-tag {
+    font-size: 0.85rem;
+    padding: 6px 14px;
+  }
 }
