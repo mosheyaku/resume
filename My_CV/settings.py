@@ -24,9 +24,10 @@ SECRET_KEY = 'django-insecure-@#12%lihtkl-m*nym2vgs$*^+509$+buerxb#_!z&!6q0nf2&e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+base_url = os.getenv("BASE_URL", "127.0.0.1")
+
 ALLOWED_HOSTS = [
-    'resume-9gue.onrender.com',
-    '127.0.0.1',
+    base_url
 ]
 
 # Application definition
