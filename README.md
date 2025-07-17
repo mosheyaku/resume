@@ -1,33 +1,27 @@
-# Resume Website
+# 💼 Moshe Yakubov – Resume Website
 
-### Introduction
-_Developed a personal resume website using the Django framework in 
-Python, incorporating Python, CSS, HTML, and JavaScript.</br>
-The website focuses on presenting my resume in a visually appealing anduser-friendly 
-design, featuring interactive elements to </br>enhance the overall browsing experience._
+A beautifully crafted, fully responsive resume and portfolio website built with **Django** and **modern CSS**.  
+This site showcases my skills, projects, education, and contact information — all designed to leave a lasting impression.
+<br/>
+<br/>
 
-## Display
-_Here you can see the main view of the site:_ ⬇️
+## 📌 Features
 
-![Introducing the interface](https://github.com/mosheyaku/Resume/assets/114317742/469d6b45-ca64-4148-8e7d-6c85611eecfd)
+- 🖼️ Interactive homepage with animated profile and social links  
+- 🎯 Categorized skills with technology logos and responsive layout  
+- 📁 Project showcase with titles and descriptions  
+- 🎓 Elegant education section with animated course tags  
+- 📬 Contact information section with clickable email and social links  
+- 📄 Resume PDF download link  
+- 📱 Fully responsive and mobile-friendly design
 
-## Scrolling Effect
-_There is a scrolling effect when you move from one page to another:_ ⬇️
+---
 
-![scrolling effect](https://github.com/mosheyaku/Resume/assets/114317742/666748fb-79f7-4545-8544-e4f8af94fe40)
+## 🛠️ Tech Stack
 
-## Links
-_In addition, the website contains links to my linkedin & github pages:_ ⬇️
+- **Backend**: Django (Python)
+- **Frontend**: HTML5, CSS3, JavaScript (vanilla)
+- **Styling**: Custom CSS using `Poppins` font
+- **Icons & Logos**: Devicon, Font Awesome, and SVG assets
 
-![links](https://github.com/mosheyaku/Resume/assets/114317742/0f850eb6-b39e-4b1a-904d-452560bdaba1)
-
-## Downloading Option
-_At last, my resume can be downloaded using a download link:_ ⬇️
-
-![download resume](https://github.com/mosheyaku/Resume/assets/114317742/69420c49-5909-48ca-8076-0dd2acdddfb1)
-
-
-## Thanks
-_Thank you for taking the time to read my README. </br>
-Hope you enjoyed!_ 💖
-
+---
