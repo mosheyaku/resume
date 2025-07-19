@@ -266,7 +266,7 @@
       </div>
 
       <div class="project-content-scroll">
-        <p class="project-description">{{ project.description }}</p>
+        <p class="project-description">{{ project.description|safe }}</p>
       </div>
 
       {% if project.skills.all %}
